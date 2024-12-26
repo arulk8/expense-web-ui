@@ -21,8 +21,8 @@ function ExpenseList({ expenses }: Props) {
         </thead>
         <tbody>
           {expenses.map((expense) => (
-            <tr key={expense.id}>
-              <td>{expense.id}</td>
+            <tr key={expense.expenseId}>
+              <td>{expense.expenseId}</td>
               <td>{expense.name}</td>
               <td>{expense.amount}</td>
               <td>{expense.date}</td>

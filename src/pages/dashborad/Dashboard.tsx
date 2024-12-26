@@ -1,27 +1,15 @@
-import React from "react";
 import ExpenseList from "../../components/expense-list/ExpenseList";
-import Expense from "../../model/Expense";
+import useExpenses from "../../hooks/useExpenses";
 
 function Dashboard() {
-  const expenses: Expense[] = [
-    {
-      id: 1,
-      name: "Water bill",
-      amount: 200.0,
-      date: new Date().toDateString(),
-      category: "Utilites",
-      note: "bills",
-    },
-    {
-      id: 2,
-      name: "Electricity bill",
-      amount: 500.0,
-      date: new Date().toDateString(),
-      category: "Utilites",
-      note: "bills",
-    },
-  ];
-  return <ExpenseList expenses={expenses} />;
+  const { isloading, errors, expenses } = useExpenses();
+  return (
+    <div>
+      {isloading && "Loading ..."}
+      {errors && <div>{errors}</div>}
+      {expenses.length > 0 && <ExpenseList expenses={expenses} />}
+    </div>
+  );
 }
 
 export default Dashboard;
