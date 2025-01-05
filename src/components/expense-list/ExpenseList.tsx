@@ -7,31 +7,26 @@ interface Props {
 
 function ExpenseList({ expenses }: Props) {
   return (
-    <div>
-      <table className="table-auto">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Note</th>
-          </tr>
-        </thead>
-        <tbody>
-          {expenses.map((expense) => (
-            <tr key={expense.expenseId}>
-              <td>{expense.expenseId}</td>
-              <td>{expense.name}</td>
-              <td>{expense.amount}</td>
-              <td>{expense.date}</td>
-              <td>{expense.category}</td>
-              <td>{expense.note}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="card">
+      <h5 className="card-header">
+        Expense
+        <span className="float-end">Amount</span>
+      </h5>
+      <div className="card-body">
+        {expenses.map((expense) => (
+          <div className="d-flex justify-content-between border-bottom-1 p-3 text-dark">
+            <div className="card-title m-0">
+              <h6>{expense.name}</h6>
+              <span className="fst-italic">{expense.date}</span>
+            </div>
+            <div className="card-subtitle">
+              <span className="badge round-pill app-primary-bg-color">
+                {expense.amount}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

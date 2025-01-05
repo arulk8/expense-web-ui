@@ -1,3 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  font-weight: 400;
+  font-style: normal;
+  --bs-body-font-family: "Roboto", serif;
+}
+
+.app-primary-color {
+  color: #79589f;
+}
+
+nav,
+.app-primary-bg-color {
+  background-color: #79589f;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid lightgray;
+}
+.card-subtitle {
+  margin-top: 1rem;
+}
+
+.navbar-nav .nav-link,
+.navbar-toggle {
+  color: white;
+  border-color: white;
+}
+
+.logo {
+  color: "white";
+  height: "3rem";
+  width: "3rem";
 }
